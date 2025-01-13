@@ -1,9 +1,11 @@
 package com.example.bebo
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,9 +16,11 @@ import androidx.compose.ui.graphics.Color
 import com.example.bebo.composables.BMI
 import com.example.bebo.composables.DistanceTransfer
 import com.example.bebo.composables.HeartRate
+import com.example.bebo.composables.TemperateConverter
 import com.example.bebo.ui.theme.BeBoTheme
 
 class MainActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -32,6 +36,7 @@ class MainActivity : ComponentActivity() {
                         HeartRate()
                         BMI()
                         DistanceTransfer()
+                        TemperateConverter()
                     }
 
                 }
