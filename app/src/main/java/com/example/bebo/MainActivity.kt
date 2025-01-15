@@ -14,6 +14,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.example.bebo.composables.BMI
+import com.example.bebo.composables.DiceRoll
 import com.example.bebo.composables.DistanceTransfer
 import com.example.bebo.composables.HeartRate
 import com.example.bebo.composables.TemperateConverter
@@ -33,10 +34,11 @@ class MainActivity : ComponentActivity() {
                             .fillMaxWidth()
                             .background(Color(0xFF919191))
                     ) {
-                        HeartRate()
-                        BMI()
-                        DistanceTransfer()
-                        TemperateConverter()
+//                        HeartRate()
+//                        BMI()
+//                        DistanceTransfer()
+//                        TemperateConverter()
+                        DiceRoll()
                     }
 
                 }

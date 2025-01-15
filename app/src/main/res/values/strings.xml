@@ -15,5 +15,6 @@
     <string name="type_the_distance_in_miles">Type the distance in Miles.</string>
     <string name="kilometers">KiloMeters</string>
     <string name="type_the_distance_in_kilometers">Type the distance in KiloMeters.</string>
+    <string name="roll_it">Roll it!</string>
 
 </resources>
