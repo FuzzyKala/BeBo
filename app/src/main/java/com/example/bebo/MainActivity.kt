@@ -17,6 +17,7 @@ import com.example.bebo.composables.BMI
 import com.example.bebo.composables.DiceRoll
 import com.example.bebo.composables.DistanceTransfer
 import com.example.bebo.composables.HeartRate
+import com.example.bebo.composables.LoginForm
 import com.example.bebo.composables.TemperateConverter
 import com.example.bebo.ui.theme.BeBoTheme
 
@@ -38,7 +39,8 @@ class MainActivity : ComponentActivity() {
 //                        BMI()
 //                        DistanceTransfer()
 //                        TemperateConverter()
-                        DiceRoll()
+//                        DiceRoll()
+                        LoginForm()
                     }
 
                 }
