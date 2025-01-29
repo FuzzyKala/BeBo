@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.example.bebo.composables.MyApp
+import com.example.bebo.composables.Calories
 import com.example.bebo.ui.theme.BeBoTheme
 
 class MainActivity : ComponentActivity() {
@@ -34,8 +34,10 @@ class MainActivity : ComponentActivity() {
 //                        DiceRoll()
 //                        LoginForm()
 //                        ListOfSensors()
-                          MyApp()
+//                        MyApp()
 //                        Electricity()
+//                        State()
+                        Calories("Calories")
                     }
 
                 }
