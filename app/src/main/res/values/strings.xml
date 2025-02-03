@@ -6,8 +6,8 @@
     <string name="placeholder_heart_rate">Type your age here!</string>
     <string name="placeholder_height">Type your height here!</string>
     <string name="placeholder_weight">Type your weight here!</string>
-    <string name="label_height">Height</string>
-    <string name="label_weight">weight</string>
+    <string name="label_height">Height (m)</string>
+    <string name="label_weight">Weight (Kg)</string>
     <string name="bmi_result">Your BMI is %s</string>
     <string name="body_mass_index">Body Mass Index</string>
     <string name="distance_transfer">Distance Transfer</string>
