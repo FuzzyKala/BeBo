@@ -6,7 +6,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
-import com.example.bebo.bmi.BMI
+import androidx.compose.ui.Modifier
+import com.example.bebo.todo.TodoScreen
 import com.example.bebo.ui.theme.BeBoTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,8 +21,8 @@ class MainActivity : ComponentActivity() {
 
 //                HeartRate()
 //                StateButton()
-
-                BMI()
+//                BMI()
+                TodoScreen()
 ////                        DistanceTransfer()
 ////                        TemperateConverter()
 ////                        DiceRoll()
