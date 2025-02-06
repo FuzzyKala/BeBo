@@ -1,17 +1,30 @@
 package com.example.bebo.todo
 
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 
-@Composable
-fun TodoScreen(todoViewModel: TodoViewModel = viewModel()) {
-    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-        TodoList(modifier = Modifier.padding(innerPadding), todoViewModel.todos)
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun TodoApp(todoViewModel: TodoViewModel = viewModel()) {
+    Scaffold(
+        topBar = { TopAppBar(title = { Text("Todos") }) }
+    ) { innerPadding ->
+        TodoScreen(Modifier.padding(innerPadding), todoViewModel.todoUiState)
+    }
+}
+
+@Composable
+fun TodoScreen(modifier: Modifier, uiState: TodoUiState) {
+    when (uiState) {
+        is TodoUiState.Loading -> LoadingScreen()
+        is TodoUiState.Success -> TodoList(modifier, uiState.todos)
+        is TodoUiState.Error -> ErrorScreen()
     }
 }

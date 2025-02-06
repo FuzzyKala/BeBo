@@ -8,24 +8,36 @@ data class Todo(
     var userId: Int,
     var id: Int,
     var title: String,
-    var compeleted: Boolean
+    var completed: Boolean
 )
 
-const val BASE_URL = "https://jsonplaceholder.typicode.com/"
+//data class Success(val todo:List<Todo>)
+
+const val BASE_URL = "https://jsonplaceholdert.typicode.com/"
 
 interface TodosApi {
     @GET("Todos")
     suspend fun getTodos(): List<Todo>
+
     companion object {
-        var todosService: TodosApi? = null
+        @Volatile
+        private var todosService: TodosApi? = null
+
         fun getInstance(): TodosApi {
-            if (todosService === null) {
-                todosService = Retrofit.Builder()
+//            if (todosService === null) {
+//                todosService = Retrofit.Builder()
+//                    .baseUrl(BASE_URL)
+//                    .addConverterFactory(GsonConverterFactory.create())
+//                    .build().create(TodosApi::class.java)
+//            }
+//            return todosService!!
+            return todosService ?: synchronized(this) {
+                todosService ?: Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build().create(TodosApi::class.java)
+                    .also { todosService = it }
             }
-            return todosService!!
         }
     }
 }

@@ -23,3 +23,14 @@ fun TodoList(modifier: Modifier = Modifier, todos: List<Todo>) {
         }
     }
 }
+
+@Composable
+fun LoadingScreen() {
+    Text("Loading now")
+}
+
+
+@Composable
+fun ErrorScreen(){
+    Text("This is the error page.")
+}
