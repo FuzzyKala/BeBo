@@ -21,16 +21,28 @@ fun TodoApp(todoViewModel: TodoViewModel = koinViewModel()) {
     Scaffold(
         topBar = { TopAppBar(title = { Text("Todos") }) }
     ) { innerPadding ->
-        Log.d("uiState","$uiState")
+        Log.d("uiState", "$uiState")
         TodoScreen(Modifier.padding(innerPadding), uiState)
     }
 }
 
 @Composable
 fun TodoScreen(modifier: Modifier, uiState: TodoUiState) {
+    Log.d("TodoUiState", "$uiState")
     when (uiState) {
-        is TodoUiState.Loading -> LoadingScreen()
+        is TodoUiState.Loading -> LoadingScreen(modifier)
         is TodoUiState.Success -> TodoList(modifier, uiState.todoList)
-        is TodoUiState.Error -> ErrorScreen()
+        is TodoUiState.Error -> ErrorScreen(modifier)
     }
+}
+
+@Composable
+fun LoadingScreen(modifier: Modifier = Modifier) {
+    Text("Loading now", modifier = modifier)
+}
+
+@Composable
+fun ErrorScreen(modifier: Modifier = Modifier) {
+
+    Text("This is the error page.", modifier = modifier)
 }
